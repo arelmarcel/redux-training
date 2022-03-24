@@ -1,14 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 let lastId = 0;
-const initialState = [];
-
+const initialState = {
+    list: []
+};
 const slice = createSlice({
     name: "products",
     initialState: initialState,
     reducers: {
         productAdded: (products, action) => {
-            products.push({
+            products.list.push({
                 id: ++lastId,
                 name: action.payload.name,
                 price: action.payload.price,
@@ -16,13 +17,22 @@ const slice = createSlice({
             });
         },
         productMarkAsDiscount: (products, action) => {
-            const index = products.findIndex(product => product.id === action.payload.id);
+            const index = products.list.findIndex(product => product.id === action.payload.id);
             if (index > -1) {
                 products[index].hasDiscount = action.payload.hasDiscount;
             }
-        }
+        },
+        apiProductsRequestSucceeded: (products, action) => {
+            products.list.push(...action.payload);
+        },
+        apiProductsRequestSucceeded: (products, action) => {
+            products.list.push(...action.payload);
+        },
+        piProductRequestFailed: (products, action) => {
+            console.log('error', action.payload);
+        },
     }
 });
 
-export const { productAdded, productMarkAsDiscount } = slice.actions;
+export const { productAdded, productMarkAsDiscount, apiProductsRequestSucceeded, piProductRequestFailed } = slice.actions;
 export default slice.reducer;

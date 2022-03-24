@@ -42,6 +42,17 @@ store.dispatch(productAdded({
     hasDiscount: true,
 }))
 
+store.dispatch({
+    type: 'apiRequest',
+    payload: {
+        url: 'https://fakestoreapi.com/products',
+        method: 'GET',
+        onSuccess: 'onsuccess',
+        onError: 'onerror'
+    }
+})
+
+
 // store.dispatch({
 //     type: actions.PRODUCT_REMOVED,
 //     payload: {
