@@ -25,7 +25,7 @@ export default function reducer(state = initialState, action) {
                     // id: action.payload.id,
                     name: action.payload.name,
                     price: action.payload.price,
-                    hasDiscount: action.payload.hasdiscount
+                    hasDiscount: action.payload.hasDiscount
                 }
             ]
         case actions.PRODUCT_REMOVED:

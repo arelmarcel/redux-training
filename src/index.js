@@ -12,6 +12,7 @@ store.dispatch({
     payload: {
         name: "Product 1",
         price: 1500,
+        hasDiscount: false,
     }
 });
 
@@ -20,8 +21,9 @@ store.dispatch({
 store.dispatch({
     type: actions.PRODUCT_ADDED,
     payload: {
-        name: "Product 3",
+        name: "Product 2",
         price: 500,
+        hasDiscount: false,
     }
 });
 
@@ -30,6 +32,7 @@ store.dispatch({
     payload: {
         name: "Product aaaa",
         price: 500,
+        hasDiscount: false,
     }
 });
 
@@ -38,6 +41,7 @@ store.dispatch({
     payload: {
         name: "Product bbb",
         price: 500,
+        hasDiscount: false,
     }
 });
 
@@ -50,10 +54,18 @@ store.dispatch({
 });
 
 store.dispatch({
+    type: actions.PRODUCT_REMOVED,
+    payload: {
+        id: 3,
+    }
+})
+
+store.dispatch({
     type: actions.PRODUCT_ADDED,
     payload: {
         name: "Product ccc",
         price: 500,
+        hasDiscount: false,
     }
 });
 
