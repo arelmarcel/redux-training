@@ -1,0 +1,23 @@
+{
+    type: "addProductToCart"
+    payload:{
+        productName:
+        price:
+        quantity:
+    }
+}
+
+{
+    type: "updateQuantity"
+    payload:{
+        id:
+        quantity:
+    }
+}
+
+{
+    type: "removeProductFromCart"
+    payload:{
+        id
+    }
+}

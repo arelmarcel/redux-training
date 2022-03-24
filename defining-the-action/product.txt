@@ -1,0 +1,24 @@
+{
+    type: "productAdded"
+    description:
+}
+
+{
+    type: "productRemoved"
+    description:
+}
+------------
+
+{
+    type:
+    description:
+}
+
+or
+
+{
+    type:
+    payload:{
+
+    }
+}
