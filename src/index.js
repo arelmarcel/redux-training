@@ -1,10 +1,11 @@
 import store from "./store/store";
 import { productAdded, productMarkAsDiscount } from "./store/product";
+import { addProductToCart, updateQuantity } from "./store/cart";
+// import { addNewUser} from 
 
-
-store.subscribe(() => {
-    console.log('Store changed!', store.getState());
-});
+// store.subscribe(() => {
+//     console.log('Store changed!', store.getState());
+// });
 
 store.dispatch(productAdded({
     name: "Product 1",
@@ -57,4 +58,4 @@ store.dispatch(productAdded({
 //     }
 // });
 
-console.log(store.getState())
+// console.log(store.getState())
